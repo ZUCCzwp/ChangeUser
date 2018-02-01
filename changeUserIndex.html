@@ -1,0 +1,96 @@
+<extend name="Layout:public" />
+
+<!-- 继承模板区域 -->
+
+<block name="main">
+
+    <div class="col-md-12">
+
+        <div class="panel">
+
+            <div class="panel-heading">
+
+                <div class="panel-title hidden-xs">
+
+                    <span class="glyphicon glyphicon-transfer"></span>
+
+                    用户关系管理列表
+
+                </div>
+
+            </div>
+
+            <div class="panel-body">
+
+            <empty name="cate">
+
+                  <form class="form-horizontal" role="form" action="{:U('user/changeUser')}" method="post" enctype="multipart/form-data">
+
+              <else />
+
+                  <form class="form-horizontal" role="form" action="{:U('user/editChangeUser')}" method="post" enctype="multipart/form-data">
+
+              </empty>
+
+                <div class="form-group">
+
+                  <label for="input" class="col-lg-3 control-label">相关用户</label>
+
+                  <div class="col-lg-8 p_html" >
+
+                    <div style="float: left; margin-right: 10px;">
+
+                      <input type="text" style="display: inline-block" name="uid"  id="uid" class="form-control" value="{$userid}" placeholder="" >
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label for="input" class="col-lg-3 control-label">更换用户</label>
+
+                  <div class="col-lg-8">
+
+                    <div style="float: left; margin-right: 10px;">
+
+                      <input type="text" style="display: inline-block" name="cid"  id="cid" class="form-control" value="{$userid}" placeholder="" >
+
+                      <span></span>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="form-group">
+
+                  <label class="col-md-3 control-label"></label>
+
+                  <div class="col-lg-8">
+
+                    <div>
+
+                      <input class="btn btn-primary " type="submit" value="更换" />
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script type="text/javascript">
+    </script>
+
+</block>
